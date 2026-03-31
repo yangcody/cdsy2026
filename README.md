@@ -2,26 +2,28 @@
 
 코디세이 미션1
 
-## 1\. 프로젝트 개요
+## 1. 프로젝트 개요
 
-## 2\. 실행 환경
+## 2. 실행 환경
 
-## 3\. 수행 체크리스트
+## 3. 수행 체크리스트
 
-* \[ ] 터미널
-* \[ ] 권한
-* \[ ] Docker
-* \[ ] Dockerfile
-* \[ ] 포트
-* \[ ] 마운트
-* \[ ] 볼륨
-* \[ ] Git/GitHub
+* [ ] 터미널
+* [ ] 권한
+* [ ] Docker
+* [ ] Dockerfile
+* [ ] 포트
+* [ ] 마운트
+* [ ] 볼륨
+* [ ] Git/GitHub
 
-## 4\. 수행 로그
+## 4. 수행 로그
 
-\### 터미널 기본 조작
+### 터미널 기본 조작
 
-bash$ pwd
+bash
+
+$ pwd
 
 /c/Users/yangcody/cdsy2026
 
@@ -57,9 +59,11 @@ $ rm file1.txt
 
 $ rm -r dir1
 
-\### 권한 실습
+### 권한 실습
 
-bash$ cd practice
+bash
+
+$ cd practice
 
 $ touch test.txt
 
@@ -85,15 +89,15 @@ total 0
 
 drwx------ 1 lenovo 197121 0 Apr  1 00:37 testdir/
 
-## 5\. Dockerfile
+## 5. Dockerfile
 
-## 6\. 포트 매핑
+## 6. 포트 매핑
 
-## 7\. 마운트
+## 7. 마운트
 
-## 8\. 볼륨
+## 8. 볼륨
 
-## 9\. Git 설정
+## 9. Git 설정
 
-## 10\. 트러블슈팅
+## 10. 트러블슈팅
 

@@ -21,8 +21,6 @@
 
 \### 터미널 기본 조작
 
-
-
 bash$ pwd
 
 /c/Users/yangcody/cdsy2026
@@ -58,6 +56,34 @@ $ mv file3.txt dir1/
 $ rm file1.txt
 
 $ rm -r dir1
+
+\### 권한 실습
+
+bash$ cd practice
+
+$ touch test.txt
+
+$ mkdir testdir
+
+$ ls -l
+
+total 0
+
+-rw-r--r-- 1 lenovo 197121 0 Apr  1 00:37 test.txt
+
+drwxr-xr-x 1 lenovo 197121 0 Apr  1 00:37 testdir/
+
+$ chmod 777 test.txt
+
+$ chmod 700 testdir
+
+$ ls -l
+
+total 0
+
+-rwxrwxrwx 1 lenovo 197121 0 Apr  1 00:37 test.txt
+
+drwx------ 1 lenovo 197121 0 Apr  1 00:37 testdir/
 
 ## 5\. Dockerfile
 

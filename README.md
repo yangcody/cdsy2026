@@ -3,6 +3,9 @@
 코디세이 미션1
 
 ## 1. 프로젝트 개요
+- Docker 기반 개발 환경 구축
+- 컨테이너 실행 및 웹 서버 구성
+- 볼륨 및 마운트 검증
 
 ## 2. 실행 환경
 
@@ -19,7 +22,7 @@
 
 ## 4. 수행 로그
 
-### 터미널 기본 조작
+### 터미널 조작
 
 ```bash
 
@@ -91,7 +94,7 @@ total 0
 drwx------ 1 lenovo 197121 0 Apr  1 00:37 testdir/
 ```
 
-### Docker 설치 및 점검
+### Docker 설치 및 기본 점검
 ```bash
 $ docker --version
 Docker version 29.3.1, build c2be9cc
@@ -206,7 +209,8 @@ Server:
  Live Restore Enabled: false
  Firewall Backend: iptables
 ```
-### Docker 기본 명령 실행
+
+### Docker 기본 운영 명령 수행
 ```bash
 $ docker pull hello-world
 
@@ -263,6 +267,7 @@ This message shows that your installation appears to be working correctly.
 $ docker stats
 
 ```
+
 ### 컨테이너 실행 실습
 
 ```bash
@@ -325,7 +330,7 @@ exit
 ```
 
 
-## 5. Dockerfile 기반 웹 서버
+## 5. 기존 Dockerfile 기반 커스텀 이미지 제작(웹 서버)
 
 - 베이스 이미지: nginx:alpine
 - 커스텀 내용: HTML 파일 복사
@@ -383,7 +388,16 @@ $ docker exec -it vol-test2 cat /data/test.txt
 hello
 ```
 
-## 9. Git 설정
+## 9. Git 설정 및 GitHub 연동
+```bash
+$ git config --global user.name "yangcody"
+$ git config --global user.email "your-email@example.com"
+$ git config --global init.defaultBranch main
 
+$ git config --list
+init.defaultbranch=master
+user.name=yangcody
+user.email=astylus@naver.com
+```
 ## 10. 트러블슈팅
 

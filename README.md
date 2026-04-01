@@ -58,10 +58,11 @@ $ mv file3.txt dir1/
 $ rm file1.txt
 
 $ rm -r dir1
+```
 
 ### 권한 실습
 
-bash
+```bash
 
 $ cd practice
 
@@ -90,239 +91,121 @@ total 0
 drwx------ 1 lenovo 197121 0 Apr  1 00:37 testdir/
 ```
 
-
 ### Docker 설치 및 점검
-
 ```bash
-
 $ docker --version
-
 Docker version 29.3.1, build c2be9cc
 
 $ docker info
-
 Client:
-
-&#x20;Version:    29.3.1
-
-&#x20;Context:    desktop-linux
-
-&#x20;Debug Mode: false
-
-&#x20;Plugins:
-
-&#x20; agent: Docker AI Agent Runner (Docker Inc.)
-
-&#x20;   Version:  v1.34.0
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-agent.exe
-
-&#x20; ai: Docker AI Agent - Ask Gordon (Docker Inc.)
-
-&#x20;   Version:  v1.20.1
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-ai.exe
-
-&#x20; buildx: Docker Buildx (Docker Inc.)
-
-&#x20;   Version:  v0.32.1-desktop.1
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-buildx.exe
-
-&#x20; compose: Docker Compose (Docker Inc.)
-
-&#x20;   Version:  v5.1.1
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-compose.exe
-
-&#x20; debug: Get a shell into any image or container (Docker Inc.)
-
-&#x20;   Version:  0.0.47
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-debug.exe
-
-&#x20; desktop: Docker Desktop commands (Docker Inc.)
-
-&#x20;   Version:  v0.3.0
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-desktop.exe
-
-&#x20; dhi: CLI for managing Docker Hardened Images (Docker Inc.)
-
-&#x20;   Version:  v0.0.2
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-dhi.exe
-
-&#x20; extension: Manages Docker extensions (Docker Inc.)
-
-&#x20;   Version:  v0.2.31
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-extension.exe
-
-&#x20; init: Creates Docker-related starter files for your project (Docker Inc.)
-
-&#x20;   Version:  v1.4.0
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-init.exe
-
-&#x20; mcp: Docker MCP Plugin (Docker Inc.)
-
-&#x20;   Version:  v0.40.3
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-mcp.exe
-
-&#x20; model: Docker Model Runner (Docker Inc.)
-
-&#x20;   Version:  v1.1.28
-
-&#x20;   Path:     C:\\Users\\lenovo\\.docker\\cli-plugins\\docker-model.exe
-
-&#x20; offload: Docker Offload (Docker Inc.)
-
-&#x20;   Version:  v0.5.77
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-offload.exe
-
-&#x20; pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
-
-&#x20;   Version:  v0.0.24
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-pass.exe
-
-&#x20; sandbox: Docker Sandbox (Docker Inc.)
-
-&#x20;   Version:  v0.12.0
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-sandbox.exe
-
-&#x20; sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
-
-&#x20;   Version:  0.6.0
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-sbom.exe
-
-&#x20; scout: Docker Scout (Docker Inc.)
-
-&#x20;   Version:  v1.20.3
-
-&#x20;   Path:     C:\\Program Files\\Docker\\cli-plugins\\docker-scout.exe
-
-
+ Version:    29.3.1
+ Context:    desktop-linux
+ Debug Mode: false
+ Plugins:
+  agent: Docker AI Agent Runner (Docker Inc.)
+    Version:  v1.34.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-agent.exe
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.20.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-ai.exe
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.32.1-desktop.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-buildx.exe
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.1.1
+    Path:     C:\Program Files\Docker\cli-plugins\docker-compose.exe
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.47
+    Path:     C:\Program Files\Docker\cli-plugins\docker-debug.exe
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.3.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-desktop.exe
+  dhi: CLI for managing Docker Hardened Images (Docker Inc.)
+    Version:  v0.0.2
+    Path:     C:\Program Files\Docker\cli-plugins\docker-dhi.exe
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     C:\Program Files\Docker\cli-plugins\docker-extension.exe
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-init.exe
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.40.3
+    Path:     C:\Program Files\Docker\cli-plugins\docker-mcp.exe
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.1.28
+    Path:     C:\Users\lenovo\.docker\cli-plugins\docker-model.exe
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.5.77
+    Path:     C:\Program Files\Docker\cli-plugins\docker-offload.exe
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.0.24
+    Path:     C:\Program Files\Docker\cli-plugins\docker-pass.exe
+  sandbox: Docker Sandbox (Docker Inc.)
+    Version:  v0.12.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sandbox.exe
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     C:\Program Files\Docker\cli-plugins\docker-sbom.exe
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.20.3
+    Path:     C:\Program Files\Docker\cli-plugins\docker-scout.exe
 
 Server:
-
-&#x20;Containers: 4
-
-&#x20; Running: 0
-
-&#x20; Paused: 0
-
-&#x20; Stopped: 4
-
-&#x20;Images: 2
-
-&#x20;Server Version: 29.3.1
-
-&#x20;Storage Driver: overlayfs
-
-&#x20; driver-type: io.containerd.snapshotter.v1
-
-&#x20;Logging Driver: json-file
-
-&#x20;Cgroup Driver: cgroupfs
-
-&#x20;Cgroup Version: 2
-
-&#x20;Plugins:
-
-&#x20; Volume: local
-
-&#x20; Network: bridge host ipvlan macvlan null overlay
-
-&#x20; Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
-
-&#x20;CDI spec directories:
-
-&#x20; /etc/cdi
-
-&#x20; /var/run/cdi
-
-&#x20;Discovered Devices:
-
-&#x20; cdi: docker.com/gpu=webgpu
-
-&#x20;Swarm: inactive
-
-&#x20;Runtimes: io.containerd.runc.v2 nvidia runc
-
-&#x20;Default Runtime: runc
-
-&#x20;Init Binary: docker-init
-
-&#x20;containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75
-
-&#x20;runc version: v1.3.4-0-gd6d73eb8
-
-&#x20;init version: de40ad0
-
-&#x20;Security Options:
-
-&#x20; seccomp
-
-&#x20;  Profile: builtin
-
-&#x20; cgroupns
-
-&#x20;Kernel Version: 6.6.87.2-microsoft-standard-WSL2
-
-&#x20;Operating System: Docker Desktop
-
-&#x20;OSType: linux
-
-&#x20;Architecture: x86\_64
-
-&#x20;CPUs: 8
-
-&#x20;Total Memory: 7.617GiB
-
-&#x20;Name: docker-desktop
-
-&#x20;ID: 1d44c52d-818b-48e8-a4f5-da5193072a67
-
-&#x20;Docker Root Dir: /var/lib/docker
-
-&#x20;Debug Mode: false
-
-&#x20;HTTP Proxy: http.docker.internal:3128
-
-&#x20;HTTPS Proxy: http.docker.internal:3128
-
-&#x20;No Proxy: hubproxy.docker.internal
-
-&#x20;Labels:
-
-&#x20; com.docker.desktop.address=npipe://\\\\.\\pipe\\docker\_cli
-
-&#x20;Experimental: false
-
-&#x20;Insecure Registries:
-
-&#x20; hubproxy.docker.internal:5555
-
-&#x20; ::1/128
-
-&#x20; 127.0.0.0/8
-
-&#x20;Live Restore Enabled: false
-
-&#x20;Firewall Backend: iptables
+ Containers: 4
+  Running: 0
+  Paused: 0
+  Stopped: 4
+ Images: 2
+ Server Version: 29.3.1
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Discovered Devices:
+  cdi: docker.com/gpu=webgpu
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75
+ runc version: v1.3.4-0-gd6d73eb8
+ init version: de40ad0
+ Security Options:
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.6.87.2-microsoft-standard-WSL2
+ Operating System: Docker Desktop
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 8
+ Total Memory: 7.617GiB
+ Name: docker-desktop
+ ID: 1d44c52d-818b-48e8-a4f5-da5193072a67
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+ Labels:
+  com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+ Experimental: false
+ Insecure Registries:
+  hubproxy.docker.internal:5555
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Firewall Backend: iptables
 ```
-
-
-
-
-
-
 ### Docker 기본 명령 실행
 ```bash
 $ docker pull hello-world
@@ -441,7 +324,25 @@ root@120ea18eb6a4:/# exit
 exit
 ```
 
-## 5. Dockerfile
+
+## 5. Dockerfile 기반 웹 서버
+
+- 베이스 이미지: nginx:alpine
+- 커스텀 내용: HTML 파일 복사
+
+```dockerfile
+FROM nginx:alpine
+COPY app/ /usr/share/nginx/html/
+```
+
+```bash
+$ docker build -t my-web:1.0 .
+
+$ docker run -d -p 8080:80 --name my-web my-web:1.0
+
+$ curl http://localhost:8080
+<h1>Hello Docker, from yangcody</h1>
+```
 
 ## 6. 포트 매핑
 

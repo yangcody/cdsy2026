@@ -2,26 +2,26 @@
 
 코디세이 미션1
 
-## 1\. 프로젝트 개요
+## 1. 프로젝트 개요
 
-## 2\. 실행 환경
+## 2. 실행 환경
 
-## 3\. 수행 체크리스트
+## 3. 수행 체크리스트
 
-* \[ ] 터미널
-* \[ ] 권한
-* \[ ] Docker
-* \[ ] Dockerfile
-* \[ ] 포트
-* \[ ] 마운트
-* \[ ] 볼륨
-* \[ ] Git/GitHub
+* [ ] 터미널
+* [ ] 권한
+* [ ] Docker
+* [ ] Dockerfile
+* [ ] 포트
+* [ ] 마운트
+* [ ] 볼륨
+* [ ] Git/GitHub
 
-## 4\. 수행 로그
+## 4. 수행 로그
 
 ### 터미널 기본 조작
 
-bash
+```bash
 
 $ pwd
 
@@ -73,7 +73,7 @@ $ ls -l
 
 total 0
 
-\-rw-r--r-- 1 lenovo 197121 0 Apr  1 00:37 test.txt
+-rw-r--r-- 1 lenovo 197121 0 Apr  1 00:37 test.txt
 
 drwxr-xr-x 1 lenovo 197121 0 Apr  1 00:37 testdir/
 
@@ -85,15 +85,15 @@ $ ls -l
 
 total 0
 
-\-rwxrwxrwx 1 lenovo 197121 0 Apr  1 00:37 test.txt
+-rwxrwxrwx 1 lenovo 197121 0 Apr  1 00:37 test.txt
 
 drwx------ 1 lenovo 197121 0 Apr  1 00:37 testdir/
-
+```
 
 
 ### Docker 설치 및 점검
 
-bash
+```bash
 
 $ docker --version
 
@@ -316,15 +316,15 @@ Server:
 &#x20;Live Restore Enabled: false
 
 &#x20;Firewall Backend: iptables
+```
 
 
 
 
 
 
-
-\### Docker 기본 명령 실행
-
+### Docker 기본 명령 실행
+```bash
 $ docker pull hello-world
 
 Using default tag: latest
@@ -379,7 +379,8 @@ This message shows that your installation appears to be working correctly.
 
 $ docker stats
 
-\### 컨테이너 실행 실습
+```
+### 컨테이너 실행 실습
 
 ```bash
 
@@ -438,16 +439,17 @@ inside-container
 root@120ea18eb6a4:/# exit
 
 exit
+```
 
-## 5\. Dockerfile
+## 5. Dockerfile
 
-## 6\. 포트 매핑
+## 6. 포트 매핑
 
-## 7\. 마운트
+## 7. 마운트
 
-## 8\. 볼륨
+## 8. 볼륨
 
-## 9\. Git 설정
+## 9. Git 설정
 
-## 10\. 트러블슈팅
+## 10. 트러블슈팅
 

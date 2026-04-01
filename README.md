@@ -337,14 +337,20 @@ COPY app/ /usr/share/nginx/html/
 
 ```bash
 $ docker build -t my-web:1.0 .
-
 $ docker run -d -p 8080:80 --name my-web my-web:1.0
+```
 
+## 6. 포트 매핑 및 접속 증거
+```bash
+docker ps
+CONTAINER ID   IMAGE        COMMAND                   CREATED          STATUS          PORTS                          
+           NAMES
+5519ada2e7ac   my-web:1.0   "/docker-entrypoint.…"   26 minutes ago   Up 26 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   my-web
+120ea18eb6a4   ubuntu       "/bin/bash"               50 minutes ago   Up 50 minutes                                  
+           test-ubuntu
 $ curl http://localhost:8080
 <h1>Hello Docker, from yangcody</h1>
 ```
-
-## 6. 포트 매핑
 
 ## 7. 마운트
 

@@ -343,9 +343,9 @@ $ docker images
 
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
 
-hello-world:latest   452a468a4bf9       25.9kB         9.49kB    U 
+hello-world:latest   452a468a4bf9       25.9kB         9.49kB    U
 
-ubuntu:latest        186072bba1b2        119MB         31.7MB    U 
+ubuntu:latest        186072bba1b2        119MB         31.7MB    U
 
 $ docker run hello-world
 
@@ -363,11 +363,11 @@ CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                 
 
 76beaf25fbd4   hello-world   "/hello"   26 seconds ago   Exited (0) 25 seconds ago             elated\_bohr
 
-1faf346438c7   ubuntu        "bash"     24 minutes ago   Exited (0) 24 minutes ago             youthful\_joliot        
+1faf346438c7   ubuntu        "bash"     24 minutes ago   Exited (0) 24 minutes ago             youthful\_joliot
 
-9f5b56e66c41   ubuntu        "bash"     25 minutes ago   Exited (0) 24 minutes ago             elegant\_ishizaka       
+9f5b56e66c41   ubuntu        "bash"     25 minutes ago   Exited (0) 24 minutes ago             elegant\_ishizaka
 
-04290d1ea602   hello-world   "/hello"   25 minutes ago   Exited (0) 25 minutes ago             stupefied\_turing       
+04290d1ea602   hello-world   "/hello"   25 minutes ago   Exited (0) 25 minutes ago             stupefied\_turing
 
 e0dd622b7df4   hello-world   "/hello"   26 minutes ago   Exited (0) 26 minutes ago             charming\_fermat
 
@@ -378,6 +378,66 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
 $ docker stats
+
+\### 컨테이너 실행 실습
+
+```bash
+
+$ docker run hello-world
+
+Hello from Docker!
+
+$ docker run -it ubuntu bash
+
+root@651cb4500a52:/# ls
+
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+root@651cb4500a52:/# echo hello
+
+hello
+
+root@651cb4500a52:/# exit
+
+exit
+
+$ docker ps -a
+
+CONTAINER ID   IMAGE         COMMAND    CREATED              STATUS                          PORTS     NAMES
+
+651cb4500a52   ubuntu        "bash"     52 seconds ago       Exited (0) 9 seconds ago                  stoic\_jang     
+
+e6439c1662ba   hello-world   "/hello"   About a minute ago   Exited (0) About a minute ago             clever\_buck    
+
+76beaf25fbd4   hello-world   "/hello"   14 minutes ago       Exited (0) 14 minutes ago                 elated\_bohr    
+
+1faf346438c7   ubuntu        "bash"     39 minutes ago       Exited (0) 39 minutes ago                 youthful\_joliot
+
+9f5b56e66c41   ubuntu        "bash"     39 minutes ago       Exited (0) 39 minutes ago                 elegant\_ishizaka
+
+04290d1ea602   hello-world   "/hello"   40 minutes ago       Exited (0) 40 minutes ago                 stupefied\_turing
+
+e0dd622b7df4   hello-world   "/hello"   40 minutes ago       Exited (0) 40 minutes ago                 charming\_fermat
+
+$ docker run -dit --name test-ubuntu ubuntu
+
+120ea18eb6a4a7f00a60e9dc8aea788eda866934686d68ee59cbf1cb843fe10d
+
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS         PORTS     NAMES
+
+120ea18eb6a4   ubuntu    "/bin/bash"   10 seconds ago   Up 9 seconds             test-ubuntu
+
+$ docker exec -it test-ubuntu bash
+
+root@120ea18eb6a4:/# echo inside-container
+
+inside-container
+
+root@120ea18eb6a4:/# exit
+
+exit
 
 ## 5\. Dockerfile
 

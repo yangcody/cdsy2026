@@ -222,7 +222,7 @@ docker.io/library/hello-world:latest
 
 $ docker images
 
-&#x20;                                                                                                i Info →   U  In Use
+                                                                                               i Info →   U  In Use
 
 IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
 
@@ -342,7 +342,7 @@ $ docker run -d -p 8080:80 --name my-web my-web:1.0
 
 ## 6. 포트 매핑 및 접속 증거
 ```bash
-docker ps
+$ docker ps
 CONTAINER ID   IMAGE        COMMAND                   CREATED          STATUS          PORTS                          
            NAMES
 5519ada2e7ac   my-web:1.0   "/docker-entrypoint.…"   26 minutes ago   Up 26 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   my-web
@@ -354,7 +354,34 @@ $ curl http://localhost:8080
 
 ## 7. 마운트
 
-## 8. 볼륨
+## 8. Docker 볼륨 영속성 검증
+```bash
+$ docker volume create mydata
+mydata
+$ docker volume ls
+DRIVER    VOLUME NAME
+local     mydata
+$ docker run -d \
+--name vol-test \
+-v mydata:/data \
+ubuntu sleep infinity
+aad477dac14fbf4867ef1f513aec1c438cad1c91f552374725f14bfaf5ae7a6f
+$ docker exec -it vol-test bash
+root@aad477dac14f:/# echo hello > /data/test.txt
+root@aad477dac14f:/# cat /data/test.txt
+hello
+root@aad477dac14f:/# exit
+exit
+$ docker rm -f vol-test
+vol-test
+$ docker run -d \
+--name vol-test2 \
+-v mydata:/data \
+ubuntu sleep infinity
+dab6489b4f1511aee66d50b691b5972fdf6ef1ea4694a2c56631cc4c7fd6645b
+$ docker exec -it vol-test2 cat /data/test.txt
+hello
+```
 
 ## 9. Git 설정
 

@@ -317,6 +317,68 @@ Server:
 
 &#x20;Firewall Backend: iptables
 
+
+
+
+
+
+
+\### Docker 기본 명령 실행
+
+$ docker pull hello-world
+
+Using default tag: latest
+
+latest: Pulling from library/hello-world
+
+Digest: sha256:452a468a4bf985040037cb6d5392410206e47db9bf5b7278d281f94d1c2d0931
+
+Status: Image is up to date for hello-world:latest
+
+docker.io/library/hello-world:latest
+
+$ docker images
+
+&#x20;                                                                                                i Info →   U  In Use
+
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+
+hello-world:latest   452a468a4bf9       25.9kB         9.49kB    U 
+
+ubuntu:latest        186072bba1b2        119MB         31.7MB    U 
+
+$ docker run hello-world
+
+Hello from Docker!
+
+This message shows that your installation appears to be working correctly.
+
+$ docker ps
+
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+$ docker ps -a
+
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+
+76beaf25fbd4   hello-world   "/hello"   26 seconds ago   Exited (0) 25 seconds ago             elated\_bohr
+
+1faf346438c7   ubuntu        "bash"     24 minutes ago   Exited (0) 24 minutes ago             youthful\_joliot        
+
+9f5b56e66c41   ubuntu        "bash"     25 minutes ago   Exited (0) 24 minutes ago             elegant\_ishizaka       
+
+04290d1ea602   hello-world   "/hello"   25 minutes ago   Exited (0) 25 minutes ago             stupefied\_turing       
+
+e0dd622b7df4   hello-world   "/hello"   26 minutes ago   Exited (0) 26 minutes ago             charming\_fermat
+
+$ docker logs 76beaf25fbd4
+
+Hello from Docker!
+
+This message shows that your installation appears to be working correctly.
+
+$ docker stats
+
 ## 5\. Dockerfile
 
 ## 6\. 포트 매핑

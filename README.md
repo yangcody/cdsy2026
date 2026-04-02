@@ -206,7 +206,33 @@ COPY app/ /usr/share/nginx/html/
 
 ```bash
 $ docker build -t my-web:1.0 .
+[+] Building 2.1s (7/7) FINISHED                                                                 docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                             0.1s
+ => => transferring dockerfile: 90B                                                                              0.0s 
+ => [internal] load metadata for docker.io/library/nginx:alpine                                                  1.4s 
+ => [internal] load .dockerignore                                                                                0.0s
+ => => transferring context: 2B                                                                                  0.0s 
+ => [internal] load build context                                                                                0.0s 
+ => => transferring context: 118B                                                                                0.0s 
+ => [1/2] FROM docker.io/library/nginx:alpine@sha256:e7257f1ef28ba17cf7c248cb8ccf6f0c6e0228ab9c315c152f9c203cd3  0.0s 
+ => => resolve docker.io/library/nginx:alpine@sha256:e7257f1ef28ba17cf7c248cb8ccf6f0c6e0228ab9c315c152f9c203cd3  0.0s 
+ => CACHED [2/2] COPY app/ /usr/share/nginx/html/                                                                0.0s 
+ => exporting to image                                                                                           0.2s 
+ => => exporting layers                                                                                          0.0s 
+ => => exporting manifest sha256:c95562d4420dce78c187cab45312d498c51d4cad0c400993304f4b00b43bf341                0.0s 
+ => => exporting config sha256:d198bcca978df0537e98850222e263a9802226208819aa2972e0eb1741bf611c                  0.0s
+ => => exporting attestation manifest sha256:75cf50d7a6df9c0ed59bdd97d5473cfd702fa42664e5ca0cf0d5e3339c173bc4    0.0s 
+ => => exporting manifest list sha256:bd51294ba87ee6a9935cd94b75a52a16ae35bdfcd9fa95091f6e7235790bc164           0.0s 
+ => => naming to docker.io/library/my-web:1.0                                                                    0.0s 
+ => => unpacking to docker.io/library/my-web:1.0     
 $ docker run -d -p 8080:80 --name my-web my-web:1.0
+```
+
+docker에서 run으로 container를 개별 생성하는 방식 대신,
+docker-compose.yml 파일을 생성 후 docker 실행명령을 저장하여 구성관리 하는 방식을 사용하면 
+각종 설정의 재현가능성을 높여, 팀 공유를 용이하게 한다.
+```bash
+docker compose up
 ```
 
 ## 6. 포트 매핑 및 접속 증거
@@ -226,10 +252,15 @@ $ curl http://localhost:8080
 <h1>Hello Docker, from yangcody</h1>
 ```
 
+이 과정에서 “host port already in use” 발생한다면,
+1) "docker ps" 명령으로 동일 포트를 사용 중인 컨테이너 식별 후 작동 정지 및 제거
+2) 호스트 OS에서 해당 포트 사용하는 프로세스 확인하기 위해,
+윈도우는 "netstat -ano | findstr :8080", 
+macOS나 리눅스에서 "lsof -i :8080" 또는 "netstat -tulnp | grep 8080" 사용
+3) 기존 실행한 컨테이너 종료 후 다른 포트로 실행
+
 ## 7. 바인드 마운트 반영
 ```bash
-$ export MSYS_NO_PATHCONV=1
-
 $ docker run -d -p 8080:80 -v $(pwd)/app:/usr/share/nginx/html --name my-web-bind my-web:1.0
 5ac31a15ba128b035ddb3dc6a5e6886ed34fefa5ce36ffd9862a563c737fccb6
 

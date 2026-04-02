@@ -28,6 +28,9 @@
 ## 4. 수행 로그
 
 ### 터미널 기본 조작 및 폴더 구성
+절대 경로는 시스템 전체에서 항상 동일한 위치를 가리키는 경로(/로 시작)로서 안정적·명시적이므로 스케줄러·시스템 설정에 적합,
+상대 경로는 현재 작업 디렉터리에서의 위치(./, ../ 등)로서, 유연하게 이식할수 있으므로 프로젝트 내부 협업이나 이동 가능한 코드에 적합.
+
 ```bash
 $ pwd
 /c/Users/yangcody/cdsy2026
@@ -53,6 +56,8 @@ $ rm -r dir1
 ```
 
 ### 권한 실습
+숫자 표기는 owner/group/others 순서로 각 권한을 3비트(읽기/쓰기/실행)로 표현.
+각 비트 값은 읽기(r)=4, 쓰기(w)=2, 실행(x)=1이며, 세 값을 더해서 0~7 중 하나의 숫자가 됨
 ```bash
 $ cd practice
 $ touch test.txt
@@ -180,11 +185,19 @@ $docker image prune -a
 
 ### 프로젝트 디렉토리 구조
 cdsy2026/
-├── app/           # 웹 서버 소스 (HTML 등)
+
+├── app/
+
 │   └── index.html
-├── docker/        # Docker 관련 파일
+
+├── docker/        
+
 │   └── Dockerfile
-├── README.md      # 기술 문서 (핵심)
+
+├── README.md     # 기술 문서 (핵심)
+
+app/은 HTML 등 웹 서버 소스 저장, docker/에는 Docker 관련 파일 저장, 
+README.md 파일에는 전체 프로젝트 설명을 기록하는 구조로 각각 디렉토리와 파일을 설정함
 
 ```dockerfile
 FROM nginx:alpine
@@ -216,6 +229,8 @@ $ curl http://localhost:8080
 ## 7. 마운트
 
 ## 8. Docker 볼륨 영속성 검증
+컨테이너의 일시적 쓰기 계층에 데이터를 두면 삭제 시 사라지므로, 
+영속성을 위해 볼륨이나 바인드 마운트, 외부 스토리지를 사용해야 함
 ```bash
 $ docker volume create mydata
 mydata

@@ -305,5 +305,15 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To https://github.com/yangcody/cdsy2026.git
    ea413cb..59a60b7  main -> main
 ```
+
 ## 10. 트러블슈팅
+바인드 마운트 컨테이너 실행 후 로컬 파일 변경하였으나 반영 안 되는 문제 발견,
+Bash Shell에서는 실패 하였으나 윈도우 powershell에서는 정상 동작함을 확인,
+절대 경로로 변환하여 재실행하였으나 실패,
+ChatGPT의 도움으로 윈도우 Git Bash에서는 디렉토리 이름에서 "/"를 자동으로 "\" 변환하는 것을 파악하고,
+해결방안을 찾을수 있었음
+
+```bash
+$ export MSYS_NO_PATHCONV=1
+```
 

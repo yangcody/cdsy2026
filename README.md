@@ -244,6 +244,11 @@ my-web-bind
 ## 8. Docker 볼륨 영속성 검증
 컨테이너의 일시적 쓰기 계층에 데이터를 두면 삭제 시 사라지므로, 
 영속성을 위해 볼륨이나 바인드 마운트, 외부 스토리지를 사용해야 함
+
+아래 예시에서는 mydata라는 volume을 생성하여,
+vol-test 컨테이너를 mydata에 연결하고 컨테이너 내부에 데이터 저장 후 컨테이너 삭제,
+새로운 컨테이너 생성하여 mydata에 연결 후 volume에 저장된 데이터를 불러오기 함
+
 ```bash
 $ docker volume create mydata
 mydata
@@ -252,10 +257,7 @@ $ docker volume ls
 DRIVER    VOLUME NAME
 local     mydata
 
-$ docker run -d \
---name vol-test \
--v mydata:/data \
-ubuntu sleep infinity
+$ docker run -d --name vol-test -v mydata:/data ubuntu sleep infinity
 aad477dac14fbf4867ef1f513aec1c438cad1c91f552374725f14bfaf5ae7a6f
 
 $ docker exec -it vol-test bash
@@ -268,10 +270,7 @@ exit
 $ docker rm -f vol-test
 vol-test
 
-$ docker run -d \
---name vol-test2 \
--v mydata:/data \
-ubuntu sleep infinity
+$ docker run -d --name vol-test2 -v mydata:/data ubuntu sleep infinity
 dab6489b4f1511aee66d50b691b5972fdf6ef1ea4694a2c56631cc4c7fd6645b
 
 $ docker exec -it vol-test2 cat /data/test.txt
@@ -288,6 +287,23 @@ $ git config --list
 init.defaultbranch=master
 user.name=yangcody
 user.email=astylus@naver.com
+
+$ git add README.md
+
+$ git commit -m "docs: bind mount"
+[main 59a60b7] docs: bind mount
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 561 bytes | 561.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/yangcody/cdsy2026.git
+   ea413cb..59a60b7  main -> main
 ```
 ## 10. 트러블슈팅
 

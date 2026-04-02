@@ -226,7 +226,20 @@ $ curl http://localhost:8080
 <h1>Hello Docker, from yangcody</h1>
 ```
 
-## 7. 마운트
+## 7. 바인드 마운트 반영
+```bash
+$ export MSYS_NO_PATHCONV=1
+
+$ docker run -d -p 8080:80 -v $(pwd)/app:/usr/share/nginx/html --name my-web-bind my-web:1.0
+5ac31a15ba128b035ddb3dc6a5e6886ed34fefa5ce36ffd9862a563c737fccb6
+
+$ docker exec -it my-web-bind cat /usr/share/nginx/html/index.html
+<h1>Bind Mount Test</h1>
+
+$ docker stop my-web-bind && docker rm my-web-bind
+my-web-bind
+my-web-bind
+```
 
 ## 8. Docker 볼륨 영속성 검증
 컨테이너의 일시적 쓰기 계층에 데이터를 두면 삭제 시 사라지므로, 

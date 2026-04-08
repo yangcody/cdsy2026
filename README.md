@@ -263,6 +263,15 @@ macOS나 리눅스에서 "lsof -i :8080" 또는 "netstat -tulnp | grep 8080" 사
 ```bash
 $ docker run -d -p 8080:80 -v $(pwd)/app:/usr/share/nginx/html --name my-web-bind my-web:1.0
 5ac31a15ba128b035ddb3dc6a5e6886ed34fefa5ce36ffd9862a563c737fccb6
+$ curl http://localhost:8080
+<h1>Hello Docker</h1>
+```
+
+html 내용 변경(Hello Docker > Bind Mount Test)
+
+```bash
+$ curl http://localhost:8080
+<h1>Bind Mount Test</h1>
 
 $ docker exec -it my-web-bind cat /usr/share/nginx/html/index.html
 <h1>Bind Mount Test</h1>
@@ -338,7 +347,8 @@ To https://github.com/yangcody/cdsy2026.git
 ```
 
 ## 10. 트러블슈팅
-바인드 마운트 컨테이너 실행 후 로컬 파일 변경하였으나 반영 안 되는 문제 발견,
+
+- 바인드 마운트 컨테이너 실행 후 로컬 파일 변경하였으나 반영 안 되는 문제 발견,
 Bash Shell에서는 실패 하였으나 윈도우 powershell에서는 정상 동작함을 확인,
 절대 경로로 변환하여 재실행하였으나 실패,
 ChatGPT의 도움으로 윈도우 Git Bash에서는 디렉토리 이름에서 "/"를 자동으로 "\" 변환하는 것을 파악하고,
@@ -348,3 +358,4 @@ ChatGPT의 도움으로 윈도우 Git Bash에서는 디렉토리 이름에서 "/
 $ export MSYS_NO_PATHCONV=1
 ```
 
+- github에 대한 이해 부족으로 코디세이에서 masOS로 일부만 push 하고 종료 하지 않은 상태에서, 집에서 pc에 새로 설치해서 clone이나 pull 없이 작업 후 push 하면서 repository가 중복/충돌하는 문제 발생, 챗gpt 통해서 문제를 진단하고 github 초기화 하여 다시 push 하여 문제 해결

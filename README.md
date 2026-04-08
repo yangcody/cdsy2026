@@ -263,6 +263,7 @@ macOS나 리눅스에서 "lsof -i :8080" 또는 "netstat -tulnp | grep 8080" 사
 ```bash
 $ docker run -d -p 8080:80 -v $(pwd)/app:/usr/share/nginx/html --name my-web-bind my-web:1.0
 5ac31a15ba128b035ddb3dc6a5e6886ed34fefa5ce36ffd9862a563c737fccb6
+
 $ curl http://localhost:8080
 <h1>Hello Docker</h1>
 ```
